@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <div th:each="img: ${images}" th:remove="tag">
+        <img th:src="@{/image(name=${img.picUrl})}">
+        <p th:text="${img.name}"></p><br>
+        <p th:text="${img.date}"></p><br>
+
+    </div>
+</div>
+
+</body>
+</html>
