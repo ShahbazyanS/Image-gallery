@@ -5,11 +5,13 @@ import com.example.demo.model.Image;
 import com.example.demo.service.CategoryService;
 import com.example.demo.service.ImageService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -32,6 +34,11 @@ public class MainController {
         List<Image> images = imageService.grtImageByCategory(id);
         model.addAttribute("images", images);
         return "images";
+    }
+
+    @GetMapping("/successeLogin")
+    public String successeLogin(){
+        return "redirect:/adminPage";
     }
 
     @GetMapping("loginPage")

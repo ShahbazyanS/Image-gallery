@@ -9,11 +9,12 @@
 <div>
     <div th:each="img: ${images}" th:remove="tag">
         <img th:src="@{/image(name=${img.picUrl})}">
-        <p th:text="${img.name}"></p><br>
-        <p th:text="${img.date}"></p><br>
+        <h3 th:text="${img.name}"></h3><br>
+        <h3 th:text="${img.date}"></h3><br>
 
     </div>
 </div>
+
 
 </body>
 </html>
